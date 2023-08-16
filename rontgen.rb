@@ -5,20 +5,20 @@
 class Rontgen < Formula
   desc ""
   homepage "https://github.com/yonedash/Rontgen"
-  version "1.2.0"
+  version "1.3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/YONEDASH/Rontgen/releases/download/v1.2.0/Rontgen_Darwin_arm64.tar.gz"
-      sha256 "fe8ae89eecfa539299cdd2e0351b2f5685055db8a70e24f33054bf20b8da5e51"
+    if Hardware::CPU.intel?
+      url "https://github.com/YONEDASH/Rontgen/releases/download/v1.3.0/Rontgen_Darwin_x86_64.tar.gz"
+      sha256 "e0015a0519ef5d6072e34d731bad2ed7e57197d1c5149ff8f26f91a0d7d84a97"
 
       def install
         bin.install "rn"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/YONEDASH/Rontgen/releases/download/v1.2.0/Rontgen_Darwin_x86_64.tar.gz"
-      sha256 "e7bd7d6639885d9e1068a819336f2a724f195b5ce07afc6efc3e2a9fa99e79a2"
+    if Hardware::CPU.arm?
+      url "https://github.com/YONEDASH/Rontgen/releases/download/v1.3.0/Rontgen_Darwin_arm64.tar.gz"
+      sha256 "7f2db2ec2df4b7341d26a832b9202accd388f5f33d249e2532e97ea9d30fc827"
 
       def install
         bin.install "rn"
@@ -27,17 +27,17 @@ class Rontgen < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/YONEDASH/Rontgen/releases/download/v1.2.0/Rontgen_Linux_arm64.tar.gz"
-      sha256 "33611dbab6ce9fe5985f9752c8759a36349fa2ffc45c21ef91f7bd3f2b625dd0"
+    if Hardware::CPU.intel?
+      url "https://github.com/YONEDASH/Rontgen/releases/download/v1.3.0/Rontgen_Linux_x86_64.tar.gz"
+      sha256 "c5d4cdb60745b9412ba2f9502fd420f34617fc27c695301f41bd03977b225733"
 
       def install
         bin.install "rn"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/YONEDASH/Rontgen/releases/download/v1.2.0/Rontgen_Linux_x86_64.tar.gz"
-      sha256 "f9eebab0f57932032e1086375dd8d2e9102ae9e37671541187e79cdbc4092052"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/YONEDASH/Rontgen/releases/download/v1.3.0/Rontgen_Linux_arm64.tar.gz"
+      sha256 "9954f3b2768ba4b599ba3305db179cf1544f8cd1c18aaee5e30ee2d9c60a90a9"
 
       def install
         bin.install "rn"
